@@ -1,0 +1,113 @@
+# Project root directory
+root = "."
+
+# Directory for test data (optional)
+testdata_dir = "testdata"
+
+# Temporary directory where the built binary will be stored
+tmp_dir = "tmp"
+
+[build]
+  # Extra arguments for binary (not used here)
+  args_bin = []
+  
+  # Path to the output binary file
+  bin = "tmp\\main.exe"
+  
+  # Build command to compile your Go project
+  cmd = "go build -o ./tmp/main.exe ."
+  
+  # Delay before rebuilding after a change (in milliseconds)
+  delay = 1000
+  
+  # Folders to exclude from watching
+  exclude_dir = ["assets", "tmp", "vendor", "testdata", "client"]
+  
+  # Files to exclude (none specified)
+  exclude_file = []
+  
+  # Exclude files matching this regex (e.g., Go test files)
+  exclude_regex = ["_test.go"]
+  
+  # If true, don't rebuild if file content hasn't changed
+  exclude_unchanged = false
+  
+  # Follow symlinks while watching files (disabled)
+  follow_symlink = false
+  
+  # Full path to binary (leave empty to use bin path)
+  full_bin = ""
+  
+  # Directories to include (empty = watch all except excluded ones)
+  include_dir = []
+  
+  # File extensions to watch for rebuild
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  
+  # Specific files to include (empty = all files matching extensions)
+  include_file = []
+  
+  # Delay before killing old process (zero seconds)
+  kill_delay = "0s"
+  
+  # File to log build errors (relative path)
+  log = "build-errors.log"
+  
+  # Use polling instead of file system events (disabled)
+  poll = false
+  
+  # Interval for polling if polling enabled
+  poll_interval = 0
+  
+  # Commands to run **after** a successful build (none)
+  post_cmd = []
+  
+  # Commands to run **before** building (none)
+  pre_cmd = []
+  
+  # Force re-run even if build fails (disabled)
+  rerun = false
+  
+  # Delay before re-running failed build
+  rerun_delay = 500
+  
+  # Send interrupt signal instead of kill (disabled)
+  send_interrupt = false
+  
+  # Stop building immediately if build error occurs
+  stop_on_error = false
+
+[color]
+  # Custom colors for terminal output
+  app = ""        # Color for app logs
+  build = "yellow" # Color for build logs
+  main = "magenta" # Color for main logs
+  runner = "green" # Color for runner logs
+  watcher = "cyan" # Color for watcher logs
+
+[log]
+  # Show only main logs (disabled)
+  main_only = false
+  
+  # Silent mode (disabled)
+  silent = false
+  
+  # Show timestamps in logs (disabled)
+  time = false
+
+[misc]
+  # Clean tmp folder on exit (disabled)
+  clean_on_exit = false
+
+[proxy]
+  # Proxy settings (disabled)
+  app_port = 0
+  enabled = false
+  proxy_port = 0
+
+[screen]
+  # Clear screen before rebuild (disabled)
+  clear_on_rebuild = false
+  
+  # Keep terminal scrollback (enabled)
+  keep_scroll = true
