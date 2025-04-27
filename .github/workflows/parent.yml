@@ -2,11 +2,11 @@ name: Parent Pipeline
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   frontend:
-    name: Frontend Pipeline
+    name: Client Pipeline
     uses: ./.github/workflows/client.yml
 
   backend:
