@@ -2,6 +2,7 @@
 .env
 node_modules
 .vscode
+dist
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
