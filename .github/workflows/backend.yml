@@ -1,0 +1,27 @@
+name: Backend pipeline
+
+on:
+  workflow_call: # Triggered by a parent workflow
+  workflow_dispatch: # Manual trigger
+  pull_request: # Triggered on PR to development branch
+    branches:
+      - development
+    paths:
+      - "backend/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.22"
+
+      - name: Build backend
+        run: |
+          cd backend
+          go build -o main
