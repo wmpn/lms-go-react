@@ -1,6 +1,11 @@
-name: Client Build
+name: Client pipeline
 
-on: workflow_call
+on:
+  workflow_call: # Triggered by a parent workflow
+  workflow_dispatch: # Manual trigger
+  pull_request: # Triggered on PR to development branch
+    branches:
+      - development
 
 jobs:
   build-client:
