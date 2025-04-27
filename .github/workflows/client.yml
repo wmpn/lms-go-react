@@ -6,6 +6,8 @@ on:
   pull_request: # Triggered on PR to development branch
     branches:
       - development
+    paths:
+      - "client/**"
 
 jobs:
   build-client:
